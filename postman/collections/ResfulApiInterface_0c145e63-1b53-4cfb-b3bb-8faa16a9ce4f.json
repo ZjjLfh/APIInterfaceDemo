@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "04fdc63f-3c3b-4c33-b8e2-b33475cd0093",
+		"name": "ResfulApiInterface",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b93a5cb-99b0-4832-b881-fe7e2da42f4f",
+								"exec": [
+									"pm.test(\"login ok\", () => {\r",
+									"   pm.response.to.have.status(200);\r",
+									"   pm.expect(pm.response.json()).is.not.empty; \r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e1a2676f-75b8-4656-95b0-eafeef884132",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"liufahui\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Account/SignIn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Account",
+								"SignIn"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c418a0fc-7f5c-47a8-bef3-6da54c7656e2",
+							"name": "User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userName\": \"liufahui\",\r\n  \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Account/SignIn",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Account",
+										"SignIn"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"98f6b496-f2d0-4024-aa35-831c3e02abf5\""
+						}
+					]
+				}
+			],
+			"id": "b538dada-7597-4919-ae20-18da9544144e"
+		},
+		{
+			"name": "My Apply",
+			"item": [
+				{
+					"name": "Get Apply List",
+					"id": "74398bea-2c15-4c8b-8a5d-2bf1079a56b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApply/GetMyApplyList?pageSize=8&currentPage=1&applyTimeFrom&applyTimeTo&validityTimeFrom&validityTimeTo&approveResult",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApply",
+								"GetMyApplyList"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "8"
+								},
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "applyTimeFrom",
+									"value": null,
+									"description": "apply subimit from time (dd/MM/yyyy)"
+								},
+								{
+									"key": "applyTimeTo",
+									"value": null
+								},
+								{
+									"key": "validityTimeFrom",
+									"value": null
+								},
+								{
+									"key": "validityTimeTo",
+									"value": null
+								},
+								{
+									"key": "approveResult",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8015f34d-bac8-4dde-946c-c55a877fad67",
+							"name": "Get Apply List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApply/GetMyApplyList?pageSize=8&currentPage=1&applyTimeFrom&applyTimeTo&validityTimeFrom&validityTimeTo&approveResult=0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApply",
+										"GetMyApplyList"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "8"
+										},
+										{
+											"key": "currentPage",
+											"value": "1"
+										},
+										{
+											"key": "applyTimeFrom",
+											"value": null,
+											"description": "apply subimit from time (dd/MM/yyyy)"
+										},
+										{
+											"key": "applyTimeTo",
+											"value": null
+										},
+										{
+											"key": "validityTimeFrom",
+											"value": null
+										},
+										{
+											"key": "validityTimeTo",
+											"value": null
+										},
+										{
+											"key": "approveResult",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\r\n    \"total\": 1,\r\n    \"dataList\": [\r\n        {\r\n            \"id\": \"98f6b496-f2d0-4024-aa35-831c3e02abf5\",\r\n            \"applyTime\": \"2021-12-27T15:10:20.717\",\r\n            \"validityTimeFrom\": \"2022-01-01T00:00:00\",\r\n            \"validityTimeTo\": \"2022-02-28T00:00:00\",\r\n            \"months\": 2,\r\n            \"approveTime\": \"2021-12-27T15:13:36.523\",\r\n            \"approver\": \"BCHR\",\r\n            \"approveId\": \"091b6ddd-c72a-f109-ee25-e3b7f64f96ce\",\r\n            \"rosterer\": \"Liufahui\",\r\n            \"rosterId\": \"f11aee4f-8ad9-4bcb-b50e-5cd6bc0f3f1e\",\r\n            \"approveResult\": 2,\r\n            \"signImgFileName\": \"LIUFAHUI20211227151019309.png\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Add or Update Apply",
+					"id": "b0cb261e-3d9b-4ed1-a5df-412e83af3127",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"string\",\r\n    \"validityTimeFrom\": \"string\",\r\n    \"validityTimeTo\": \"string\",\r\n    \"approveId\": \"string\",\r\n    \"rosterId\": \"string\",\r\n    \"signImgFileName\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApply/SaveMyApply",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApply",
+								"SaveMyApply"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c84cee63-ba4f-4484-8749-41e1c4021539",
+							"name": "Add or Update Apply",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\",\r\n    \"validityTimeFrom\": \"01/02/2022\",\r\n    \"validityTimeTo\": \"28/02/2022\",\r\n    \"approveId\": \"bb12a527-d250-4c26-872d-72c60294f15a\",\r\n    \"rosterId\": \"bb12a527-d250-4c26-872d-72c60294f15a\",\r\n    \"signImgFileName\": \"LIUFAHUI20211227151019309.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApply/SaveMyApply",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApply",
+										"SaveMyApply"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"\""
+						}
+					]
+				},
+				{
+					"name": "Delete Apply",
+					"id": "35320b93-e7da-4f8a-b434-c3ffb947bf0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApply/DeleteMyApply",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApply",
+								"DeleteMyApply"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4a9ede16-2fcc-427e-9879-2408883232d6",
+							"name": "Delete Apply",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"f11aee4f-8ad9-4bcb-b50e-5cd6bc0f3f1e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApply/DeleteMyApply",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApply",
+										"DeleteMyApply"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"string\""
+						}
+					]
+				}
+			],
+			"id": "f7e79a40-adbc-46fa-b19b-d90227dafe25"
+		},
+		{
+			"name": "My Approve",
+			"item": [
+				{
+					"name": "Get Approve List",
+					"id": "368658a4-d3db-4a5e-9802-fdc3c026b5cd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApprove/GetMyApproveList?pageSize=8&currentPage=1&validityTimeFrom&validityTimeTo&nameProject",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApprove",
+								"GetMyApproveList"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "currentPage",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "validityTimeFrom",
+									"value": null,
+									"description": "apply period from (MM/yyyy)",
+									"type": "text"
+								},
+								{
+									"key": "validityTimeTo",
+									"value": null,
+									"description": "apply period to (MM/yyyy)",
+									"type": "text"
+								},
+								{
+									"key": "nameProject",
+									"value": null,
+									"description": "proejcts (if more, split by ,)",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "145089b4-756d-4a97-9c5d-2e60347cdc69",
+							"name": "Get Approve List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApprove/GetMyApproveList?pageSize=8&currentPage=1&validityTimeFrom&validityTimeTo&nameProject",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApprove",
+										"GetMyApproveList"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "8"
+										},
+										{
+											"key": "currentPage",
+											"value": "1"
+										},
+										{
+											"key": "validityTimeFrom",
+											"value": null,
+											"description": "apply period from (MM/yyyy)"
+										},
+										{
+											"key": "validityTimeTo",
+											"value": null,
+											"description": "apply period to (MM/yyyy)"
+										},
+										{
+											"key": "nameProject",
+											"value": null,
+											"description": "proejcts (if more, split by ,)"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"total\": 1,\n    \"dataList\": [\n        {\n            \"id\": \"2f5af0fc-2a6b-4cc9-b5b2-f45503f0ea3b\",\n            \"applyTime\": \"2022-07-14T14:45:36.26\",\n            \"name\": \"刘发挥\",\n            \"department\": \"YSW Wuhan Office\",\n            \"position\": \"Test Engineer\",\n            \"project\": \"BUKOM SEPL,NWS,PPTSB OASE\",\n            \"validityTimeFrom\": \"2023-01-01T00:00:00\",\n            \"validityTimeTo\": \"2023-01-31T00:00:00\",\n            \"months\": 1,\n            \"rosterer\": \"刘发挥\",\n            \"rosterId\": \"bb12a527-d250-4c26-872d-72c60294f15a\",\n            \"approveResult\": 2,\n            \"preNextPeriodicStatus\": 3,\n            \"selectable\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Pass Apply",
+					"id": "18e241fb-233d-41a6-9cb3-5c98c72a8569",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n      \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApprove/PassApprove",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApprove",
+								"PassApprove"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "869fc11e-e4df-46e7-b37d-277d4ed6fd07",
+							"name": "Pass Apply",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"ids\": [\r\n    \"bb12a527-d250-4c26-872d-72c60294f15a\",\r\n    \"2f5af0fc-2a6b-4cc9-b5b2-f45503f0ea3b\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApprove/PassApprove",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApprove",
+										"PassApprove"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Reject Apply",
+					"id": "1f649d1b-851d-406b-8858-c06de6da2fa7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/MyApprove/RejectApprove",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"MyApprove",
+								"RejectApprove"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "92e47c2b-c91f-4668-95bc-f5dab60992b6",
+							"name": "Reject Apply",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"ids\": [\r\n    \"bb12a527-d250-4c26-872d-72c60294f15a\",\r\n    \"2f5af0fc-2a6b-4cc9-b5b2-f45503f0ea3b\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/MyApprove/RejectApprove",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"MyApprove",
+										"RejectApprove"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "0cb36ffc-2fca-4436-9f7d-9e1bc99123a9"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a912b767-d5bf-403a-945f-e6da229fe3be",
+				"type": "text/javascript",
+				"exec": [
+					"//test",
+					"//pm.collectionVariables.set(\"baseUrl\", \"http://localhost:5000\")",
+					"",
+					"//mock",
+					"pm.collectionVariables.set(\"baseUrl\", \"https://024d9aa0-9f7e-4dd4-a910-7194d7110666.mock.pstmn.io\")",
+					"",
+					"//authorization - mock",
+					"pm.request.addHeader({",
+					"    key: \"x-api-key\",",
+					"    value: \"PMAK-62d50c44599c0d01f8d0ba56-d12c31d915b641bc3e155f044a1b858736\"",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a75ff500-0597-4409-ac1e-9662b59b7b85",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "85781ff5-3e51-4ca5-b41f-63dc67c82540",
+			"key": "baseUrl",
+			"value": "https://024d9aa0-9f7e-4dd4-a910-7194d7110666.mock.pstmn.io",
+			"type": "string"
+		},
+		{
+			"id": "e75d356a-beb3-4b53-b57a-69f51479a328",
+			"key": "testUrl",
+			"value": "http://localhost:5000",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
